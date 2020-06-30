@@ -15,7 +15,7 @@ import java.sql.Statement;
 
 public class MainActivity extends AppCompatActivity {
 
-    private static final String database_url = "jdbc:mysql://studentcoded.com:3306/4360_db";
+    private static final String database_url = "jdbc:mysql://studentcoded.com:3306/csc4360_db";
     private static final String database_user = "csc4360dbviewer";
     private static final String database_pass = "p;fw3X2K!ab,Q";
     //placeholder
@@ -45,7 +45,7 @@ public class MainActivity extends AppCompatActivity {
             try {
                 queryResult = "Database Connection Success\n";
 
-                Class.forName(".com.mysqwl.jdbc.Driver");
+                Class.forName("com.mysql.jdbc.Driver");
                 Connection con = DriverManager.getConnection(database_url, database_user, database_pass);
                 String queryString = "select * from csc4360_db.film limit 5";
 
