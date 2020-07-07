@@ -2,6 +2,4 @@
     <string name="instructions">Click the button to retrieve some data from the database!</string>
     <string name="buttonText">Gimme data</string>
     <string name="app_name">Lab03</string>
-    <string name="goBackButton">Go Back to Main Screen</string>
-    <string name="actorQueryButton">Actor Query</string>
 </resources>

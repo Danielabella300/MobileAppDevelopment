@@ -10,11 +10,12 @@
         android:id="@+id/label1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="28dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="27dp"
+        android:layout_marginTop="207dp"
+        android:layout_marginBottom="54dp"
         android:text="@string/instructions"
+        app:layout_constraintBottom_toTopOf="@+id/getDataButton1"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -22,11 +23,12 @@
         android:id="@+id/getDataButton1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="152dp"
-        android:layout_marginTop="45dp"
-        android:layout_marginEnd="152dp"
+        android:layout_marginTop="54dp"
+        android:layout_marginBottom="117dp"
         android:text="@string/buttonText"
+        app:layout_constraintBottom_toTopOf="@+id/queryResults1"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/label1" />
 
@@ -34,24 +36,13 @@
         android:id="@+id/queryResults1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="108dp"
-        android:layout_marginTop="44dp"
-        android:layout_marginEnd="108dp"
+        android:layout_marginStart="178dp"
+        android:layout_marginEnd="176dp"
+        android:layout_marginBottom="240dp"
         android:text="Query Results Will Display Here"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/getDataButton1" />
-
-    <Button
-        android:id="@+id/secondQueryButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="147dp"
-        android:layout_marginTop="34dp"
-        android:layout_marginEnd="148dp"
-        android:text="@string/actorQueryButton"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/queryResults1" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
