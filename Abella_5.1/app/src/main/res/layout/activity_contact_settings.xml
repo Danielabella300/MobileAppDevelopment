@@ -120,5 +120,73 @@
             android:text="Descending" />
     </RadioGroup>
 
+    <TextView
+        android:id="@+id/backgroundColor"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="16dp"
+        android:text="Background Color:"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/radioGroupSortOrder" />
+
+    <ScrollView
+        android:layout_width="211dp"
+        android:layout_height="251dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginLeft="32dp"
+        android:layout_marginTop="10dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/backgroundColor">
+
+        <RadioGroup
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <RadioButton
+                android:id="@+id/radioButton4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Red" />
+
+            <RadioButton
+                android:id="@+id/radioButton6"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Orange" />
+
+            <RadioButton
+                android:id="@+id/radioButton7"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Yellow" />
+
+            <RadioButton
+                android:id="@+id/radioButton8"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Green" />
+
+            <RadioButton
+                android:id="@+id/radioButton9"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Blue" />
+
+            <RadioButton
+                android:id="@+id/radioButton10"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Indigo" />
+
+            <RadioButton
+                android:id="@+id/radioButton11"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Violet" />
+        </RadioGroup>
+    </ScrollView>
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
