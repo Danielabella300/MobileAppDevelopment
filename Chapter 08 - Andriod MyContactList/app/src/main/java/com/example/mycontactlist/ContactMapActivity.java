@@ -347,6 +347,10 @@ public class ContactMapActivity extends AppCompatActivity implements OnMapReadyC
                     if (azimut < 0.0f) { azimut+=360.0f;}
                     String direction;
                     if (azimut >= 315 || azimut < 45) { direction = "N"; }
+                    else if (azimut >= 270 && azimut < 360) { direction ="NW"; }
+                    else if (azimut >= 0   && azimut < 90 ) { direction = "NE";}
+                    else if (azimut >= 90  && azimut < 180) { direction = "SE";}
+                    else if (azimut >= 180 && azimut < 270) { direction = "SW";}
                     else if (azimut >= 225 && azimut < 315) { direction = "W"; }
                     else if (azimut >= 135 && azimut < 225) { direction = "S"; }
                     else { direction = "E"; }
