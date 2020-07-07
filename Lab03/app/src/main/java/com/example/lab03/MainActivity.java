@@ -2,6 +2,7 @@ package com.example.lab03;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.view.View;
@@ -35,8 +36,17 @@ public class MainActivity extends AppCompatActivity {
                                               public void onClick(View v){
                                                   new getDataFromDatabase().execute();
                                               }
-                                          }
-                                          );
+                                          });
+        Button secondQueryButton = (Button) findViewById(R.id.secondQueryButton);
+        //set the onClick listener for the button
+        secondQueryButton.setOnClickListener(new View.OnClickListener()
+        {
+            @Override
+            public void onClick(View v){
+                startActivity(new Intent(getApplicationContext(), SecondActivity.class));
+            }
+        });
+
     }
 
     public static class getDataFromDatabase extends AsyncTask<Void, Void, Void> {
