@@ -4,13 +4,18 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
+import android.content.IntentFilter;
+import android.os.BatteryManager;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CompoundButton;
+import android.widget.ImageButton;
 import android.widget.Switch;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import java.util.ArrayList;
@@ -36,9 +41,26 @@ public class ContactListActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_contact_list);
 
-
+        initMapButton();
+        initListButton();
+        initSettingsButton();
         initAddContactButton();
         initDeleteSwitch();
+
+        BroadcastReceiver batteryReceiver = new BroadcastReceiver() {
+            @Override
+            public void onReceive(Context context, Intent intent) {
+                double batteryLevel = intent.getIntExtra(BatteryManager.EXTRA_LEVEL,0);
+                double levelScale = intent.getIntExtra(BatteryManager.EXTRA_SCALE,0);
+                int batteryPercent = (int) Math.floor(batteryLevel / levelScale * 100);
+                TextView textBatteryState = findViewById(R.id.textBatteryLevel);
+                textBatteryState.setText(batteryPercent + "%");
+            }
+        };
+
+        IntentFilter filter = new IntentFilter(Intent.ACTION_BATTERY_CHANGED);
+        registerReceiver(batteryReceiver, filter);
+
     }
 
     @Override
@@ -71,6 +93,32 @@ public class ContactListActivity extends AppCompatActivity {
         }
 
     }
+
+    private void initListButton() {
+        ImageButton ibList = findViewById(R.id.imageButtonList);
+        ibList.setEnabled(false);
+    }
+    private void initMapButton() {
+        ImageButton ibList = findViewById(R.id.imageButtonMap);
+        ibList.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View view) {
+                Intent intent = new Intent(ContactListActivity.this, ContactMapActivity.class);
+                intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                startActivity(intent);
+            }
+        });
+    }
+    private void initSettingsButton() {
+        ImageButton ibList = findViewById(R.id.imageButtonSettings);
+        ibList.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View view) {
+                Intent intent = new Intent(ContactListActivity.this, ContactSettingsActivity.class);
+                intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                startActivity(intent);
+            }
+        });
+    }
+
     private void initAddContactButton() {
         Button newContact = findViewById(R.id.buttonAddContact);
         newContact.setOnClickListener(new View.OnClickListener() {

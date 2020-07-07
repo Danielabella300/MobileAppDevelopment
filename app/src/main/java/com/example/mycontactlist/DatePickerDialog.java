@@ -41,7 +41,7 @@ public class DatePickerDialog extends DialogFragment {
         cv.setOnDateChangeListener(new CalendarView.OnDateChangeListener() {
             @Override
             public void onSelectedDayChange(CalendarView calendarView, int year, int month, int day) {
-                 selectedDate.set(year, month, day);
+                selectedDate.set(year, month, day);
             }
         });
 
