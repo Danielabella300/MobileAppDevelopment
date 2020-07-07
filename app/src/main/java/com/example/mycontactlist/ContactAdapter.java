@@ -24,11 +24,20 @@ public class ContactAdapter extends RecyclerView.Adapter{
 
         public TextView textViewContact;
         public TextView textPhone;
+        public TextView textAddress;
+        public TextView textCity;
+        public TextView textState;
+        public TextView textZip;
         public Button deleteButton;
         public ContactViewHolder(@NonNull View itemView) {
             super(itemView);
             textViewContact = itemView.findViewById(R.id.textContactName);
             textPhone = itemView.findViewById(R.id.textPhoneNumber);
+            textAddress = itemView.findViewById(R.id.textAddress);
+            textCity = itemView.findViewById(R.id.textCity);
+            textState = itemView.findViewById(R.id.textState);
+            textZip = itemView.findViewById(R.id.textZip);
+
             deleteButton = itemView.findViewById(R.id.buttonDeleteContact);
             itemView.setTag(this);
             itemView.setOnClickListener(mOnItemClickListener);
@@ -40,6 +49,19 @@ public class ContactAdapter extends RecyclerView.Adapter{
         public TextView getPhoneTextView() {
             return textPhone;
         }
+        public TextView getAddressTextView() {
+            return textAddress;
+        }
+        public TextView getCityTextView() {
+            return textCity;
+        }
+        public TextView getStateTextView() {
+            return textState;
+        }
+        public TextView getZipTextView() {
+            return textZip;
+        }
+
         public Button getDeleteButton() {
             return deleteButton;
         }
@@ -66,6 +88,11 @@ public class ContactAdapter extends RecyclerView.Adapter{
         ContactViewHolder cvh = (ContactViewHolder) holder;
         cvh.getContactTextView().setText(contactData.get(position).getContactName());
         cvh.getPhoneTextView().setText(contactData.get(position).getPhoneNumber());
+        cvh.getAddressTextView().setText(contactData.get(position).getStreetAddress());
+        cvh.getCityTextView().setText(contactData.get(position).getCity());
+        cvh.getStateTextView().setText(contactData.get(position).getState());
+        cvh.getZipTextView().setText(contactData.get(position).getZipCode());
+
         if (isDeleting) {
             cvh.getDeleteButton().setVisibility(View.VISIBLE);
             cvh.getDeleteButton().setOnClickListener(new View.OnClickListener() {
