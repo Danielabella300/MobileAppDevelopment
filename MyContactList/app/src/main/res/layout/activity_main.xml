@@ -26,11 +26,11 @@
 
         <ImageButton
             android:id="@+id/imageButtonMap"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="79dp"
+            android:layout_height="91dp"
             android:layout_weight="1"
             android:contentDescription="@string/button_to_display_contacts_on_a_map"
-            app:srcCompat="@drawable/mapicon" />
+            app:srcCompat="@drawable/newmap" />
 
         <ImageButton
             android:id="@+id/imageButtonSettings"
