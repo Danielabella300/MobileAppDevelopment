@@ -21,8 +21,8 @@ public class reminderAdapter extends RecyclerView.Adapter{
         public TextView textDescription;
         public ContactViewHolder(@NonNull View itemView) {
             super(itemView);
-            textTitle = itemView.findViewById(R.id.textTitleName);
-            textDescription = itemView.findViewById(R.id.textDescriptionName);
+            textTitle = itemView.findViewById(R.id.textTitleName2);
+            textDescription = itemView.findViewById(R.id.textDescriptionName2);
             itemView.setTag(this);
             itemView.setOnClickListener(mOnItemClickListener);
 
