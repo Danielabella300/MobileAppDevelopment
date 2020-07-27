@@ -47,7 +47,7 @@ public class Settings extends AppCompatActivity {
 
     private void initSettings() {
         String sortBy = getSharedPreferences("ProjectPreferences",
-                Context.MODE_PRIVATE).getString("sortfield", "contactname");
+                Context.MODE_PRIVATE).getString("sortfield", "reminder");
 
         RadioButton rbTitle = findViewById(R.id.titleButton);
         RadioButton rbDate = findViewById(R.id.dateButton);
