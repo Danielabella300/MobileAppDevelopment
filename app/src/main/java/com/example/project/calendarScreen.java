@@ -1,8 +1,11 @@
 package com.example.project;
 
-import androidx.appcompat.app.AppCompatActivity;
-
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 public class calendarScreen extends AppCompatActivity {
 
@@ -10,5 +13,29 @@ public class calendarScreen extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_calendar_screen);
+
+        Button loadCreateNewReminder = (Button) findViewById(R.id.createNewButton);
+        loadCreateNewReminder.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(getApplicationContext(),newReminder.class));
+            }
+        });
+
+        Button loadListOfAlarm = (Button) findViewById(R.id.listReminderButton);
+        loadListOfAlarm.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(getApplicationContext(),ListView.class));
+            }
+        });
+
+        Button loadSettings = (Button) findViewById(R.id.settingsButton);
+        loadSettings.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(getApplicationContext(),Settings.class));
+            }
+        });
     }
 }

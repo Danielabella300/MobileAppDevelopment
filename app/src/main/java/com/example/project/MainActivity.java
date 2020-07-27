@@ -44,7 +44,14 @@ public class MainActivity extends AppCompatActivity {
         loadSettings.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(getApplicationContext(),ListView.class));
+                startActivity(new Intent(getApplicationContext(),Settings.class));
+            }
+        });
+        Button loadCalendar = (Button) findViewById(R.id.calendarButton);
+        loadCalendar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(getApplicationContext(),calendarScreen.class));
             }
         });
     }
